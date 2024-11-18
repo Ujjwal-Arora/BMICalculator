@@ -6,13 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A8AFFDAC2CE7D20900445986 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A8AFFDAB2CE7D20900445986 /* FirebaseAuth */; };
+		A8AFFDB32CE7DEFE00445986 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A8AFFDB22CE7DEFE00445986 /* GoogleSignIn */; };
+		A8AFFDB52CE7DEFE00445986 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A8AFFDB42CE7DEFE00445986 /* GoogleSignInSwift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A8AFFD972CE7CB5100445986 /* BMICalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMICalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A8AFFDB72CE7DF7D00445986 /* Exceptions for "BMICalculator" folder in "BMICalculator" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A8AFFD962CE7CB5100445986 /* BMICalculator */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A8AFFD992CE7CB5100445986 /* BMICalculator */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A8AFFDB72CE7DF7D00445986 /* Exceptions for "BMICalculator" folder in "BMICalculator" target */,
+			);
 			path = BMICalculator;
 			sourceTree = "<group>";
 		};
@@ -23,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8AFFDB52CE7DEFE00445986 /* GoogleSignInSwift in Frameworks */,
+				A8AFFDAC2CE7D20900445986 /* FirebaseAuth in Frameworks */,
+				A8AFFDB32CE7DEFE00445986 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +87,9 @@
 			);
 			name = BMICalculator;
 			packageProductDependencies = (
+				A8AFFDAB2CE7D20900445986 /* FirebaseAuth */,
+				A8AFFDB22CE7DEFE00445986 /* GoogleSignIn */,
+				A8AFFDB42CE7DEFE00445986 /* GoogleSignInSwift */,
 			);
 			productName = BMICalculator;
 			productReference = A8AFFD972CE7CB5100445986 /* BMICalculator.app */;
@@ -94,6 +119,10 @@
 			);
 			mainGroup = A8AFFD8E2CE7CB5100445986;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A8AFFDAA2CE7D20900445986 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A8AFFDB12CE7DEFE00445986 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A8AFFD982CE7CB5100445986 /* Products */;
 			projectDirPath = "";
@@ -255,6 +284,8 @@
 				DEVELOPMENT_TEAM = JYJ25JXYC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BMICalculator/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +315,8 @@
 				DEVELOPMENT_TEAM = JYJ25JXYC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BMICalculator/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -324,6 +357,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A8AFFDAA2CE7D20900445986 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.5.0;
+			};
+		};
+		A8AFFDB12CE7DEFE00445986 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8AFFDAB2CE7D20900445986 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8AFFDAA2CE7D20900445986 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A8AFFDB22CE7DEFE00445986 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8AFFDB12CE7DEFE00445986 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		A8AFFDB42CE7DEFE00445986 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8AFFDB12CE7DEFE00445986 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A8AFFD8F2CE7CB5100445986 /* Project object */;
 }
