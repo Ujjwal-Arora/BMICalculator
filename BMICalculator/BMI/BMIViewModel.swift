@@ -32,6 +32,23 @@ class BMIViewModel : ObservableObject{
     @Published var weightUnit : WeightUnits = .kg
     @Published var heightUnit : HeightUnits = .cm
     
+    var getBMICategory : String {
+        guard let bmi else { return "Invalid BMI" }
+        switch bmi {
+        case ..<18.5:
+            return "Underweight"
+        case 18.5..<24.9:
+            return "Healthy Range"
+        case 25..<29.9:
+            return "Overweight"
+        case 30..<39.9:
+            return "Obesity"
+        case 40...:
+            return "Severe Obesity"
+        default:
+            return "Invalid BMI"
+        }
+    }
     func selectFirstUser(){
         if let firstUser = users.first{
             selectedUser = firstUser

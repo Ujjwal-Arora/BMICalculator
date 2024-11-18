@@ -33,7 +33,12 @@ struct BMICalcView: View {
                     Text("Age : \(vm.age.formatted(.number))")
                     Text("Gender : \(vm.selectedUser?.gender ?? "no info")")
                     Text("Height : \(vm.selectedUser?.height.formatted(.number) ?? "no info")")
-                    Text("BMI is : \(vm.bmi?.formatted(.number) ?? "no info")")
+                    HStack {
+                        Text("BMI : \(vm.bmi?.formatted(.number.precision(.fractionLength(2))) ?? "")")
+                        Spacer()
+                        Text(vm.getBMICategory)
+                    }
+                    
                     Chart {
                         ForEach(vm.weightsOfSelectedUser) { wt in
                             LineMark(x: .value("Date", wt.date ?? Date()), y: .value("Wt", wt.weight))
@@ -52,7 +57,7 @@ struct BMICalcView: View {
                 
                 Spacer()
             }
-        }
+        }.padding()
         .sheet(isPresented: $vm.showUpdateDetailsView, content: { AddUserView(addUser: false, vm: vm) })
         .alert("You want to delete your account ?", isPresented: $vm.showDeleteAccountAlert, actions: {
             Button("Delete", role: .destructive) {
