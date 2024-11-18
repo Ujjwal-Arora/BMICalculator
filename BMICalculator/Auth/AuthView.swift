@@ -48,15 +48,20 @@ struct AuthView: View {
             }
             
             Button {
-                guard let email = vm.user?.email else { return }
-                Auth.auth().sendPasswordReset(withEmail: email)
-                print("passwrpd reset")
-                
+                vm.showPasswordResetAlert = true
             } label: {
                 Text("Forgot your password? Reset it")
                     .foregroundStyle(.blue)
                     .font(.callout)
                 
+            }
+            .alert("Send password reset email for \(vm.email) ?", isPresented: $vm.showPasswordResetAlert) {
+                Button("OK") {
+                    vm.passwordReset()
+                }
+                Button("Cancel") {
+                    
+                }
             }
             GoogleSignInButton(scheme: .light, style: .wide, state: .normal) {
                 Task{

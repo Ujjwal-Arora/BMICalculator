@@ -18,7 +18,7 @@ class AuthViewModel: ObservableObject {
     var emailAuthMethods = ["Sign Up","Log In"]
     @Published var selectedEmailAuthMethod = "Log In"
     
-    @Published var showDeleteAlert = false
+    @Published var showPasswordResetAlert = false
     
     func authSignUp(email: String, password: String) async throws {
         let result = try await Auth.auth().createUser(withEmail: email, password: password)
@@ -35,5 +35,8 @@ class AuthViewModel: ObservableObject {
     func deleteAccount(){
         Auth.auth().currentUser?.delete()
         user = nil
+    }
+    func passwordReset(){
+        Auth.auth().sendPasswordReset(withEmail: email)
     }
 }
